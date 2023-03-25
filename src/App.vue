@@ -1,8 +1,8 @@
 <script setup>
-import StopWatch from './components/StopWatch.vue';
-import AddButton from './components/AddButton.vue';
-
 import { ref } from 'vue';
+
+import StopWatch from './components/StopWatch.vue';
+import AddButton from './components/ui/AddButton.vue';
 
 const INITIAL_STOPWATCH_COUNT = 4;
 
@@ -17,12 +17,12 @@ const addStopwatch = () => stopwatches.value.push({});
 
 <template>
   <main class="main">
-    <ul class="stopwatches-list">
+    <TransitionGroup name="list" tag="ul" class="stopwatches-list">
       <li v-for="(stopwatch, index) in stopwatches" :key="`w_${index + 1}`">
         <StopWatch />
       </li>
       <AddButton @click="addStopwatch" />
-    </ul>
+    </TransitionGroup>
   </main>
 </template>
 
@@ -32,7 +32,7 @@ const addStopwatch = () => stopwatches.value.push({});
   justify-content: center;
   padding: 70px 0 80px;
 }
-.stopwatches-list {
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -42,5 +42,22 @@ const addStopwatch = () => stopwatches.value.push({});
   column-gap: $gap-column;
   row-gap: $gap-row;
   margin-bottom: $gap-row;
+}
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+  position: absolute;
 }
 </style>
