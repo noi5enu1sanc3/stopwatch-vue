@@ -2,6 +2,12 @@
 import { useStopwatch } from '../composables/useStopwatch';
 import * as formatter from '../utils/formatTime';
 
+const props = defineProps({
+  state: {
+    type: Object
+  }
+});
+
 const { hours, minutes, seconds, isRunning, handleToggleRunning, handleReset } =
   useStopwatch();
 </script>
