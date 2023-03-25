@@ -18,10 +18,10 @@ const addStopwatch = () => stopwatches.value.push({});
 <template>
   <main class="main">
     <TransitionGroup name="list" tag="ul" class="stopwatches-list">
-      <li v-for="(stopwatch, index) in stopwatches" :key="`w_${index + 1}`">
+      <li v-for="(stopwatch, index) in stopwatches" :key="'w_' + index">
         <StopWatch />
       </li>
-      <AddButton @click="addStopwatch" />
+      <AddButton :key="'w_button'" @click="addStopwatch" />
     </TransitionGroup>
   </main>
 </template>
