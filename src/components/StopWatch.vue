@@ -1,6 +1,7 @@
 <script setup>
 import { useStopwatch } from '../composables/useStopwatch';
-import * as format from '../utils/formatTime';
+import * as formatter from '../utils/formatTime';
+
 const { hours, minutes, seconds, isRunning, handleToggleRunning, handleReset } =
   useStopwatch();
 </script>
@@ -9,17 +10,8 @@ const { hours, minutes, seconds, isRunning, handleToggleRunning, handleReset } =
   <div class="stopwatch" :class="{ stopwatch_running: isRunning }">
     <div class="stopwatch__display">
       <span class="stopwatch__value">{{
-        format.getString(hours, minutes, seconds)
+        formatter.getString(hours, minutes, seconds)
       }}</span>
-      <!-- <span v-if="hours > 0" class="stopwatch__value stopwatch__value_hours"
-        >{{ hours }} :
-      </span>
-      <span v-if="minutes > 0" class="stopwatch__value stopwatch__value_minutes"
-        >{{ minutes }} :
-      </span>
-      <span class="stopwatch__value stopwatch__value_seconds">{{
-        seconds
-      }}</span> -->
     </div>
     <div class="stopwatch__controls">
       <button
