@@ -27,6 +27,7 @@ const addStopwatch = () => stopwatches.value.push({});
 </template>
 
 <style lang="scss">
+@import './assets/styles/mixins';
 .main {
   display: flex;
   justify-content: center;
@@ -38,10 +39,19 @@ ul {
   list-style: none;
   display: grid;
   width: fit-content;
-  grid-template-columns: repeat(3, 1fr);
   column-gap: $gap-column;
   row-gap: $gap-row;
   margin-bottom: $gap-row;
+
+  @include for-size(phone) {
+    grid-template-columns: 1fr;
+  }
+  @include for-size(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include for-size(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
