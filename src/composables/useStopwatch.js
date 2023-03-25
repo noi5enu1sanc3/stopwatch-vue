@@ -1,4 +1,5 @@
 import { ref } from 'vue';
+import * as converter from '../utils/convertMs';
 
 export function useStopwatch() {
   const hours = ref(0);
@@ -8,15 +9,14 @@ export function useStopwatch() {
 
   let start = 0;
   let elapsed = 0;
-  let currentTime = 0;
   let intervalId;
 
   const updateTime = () => {
     elapsed = Date.now() - start;
 
-    seconds.value = Math.floor((elapsed / 1000) % 60);
-    minutes.value = Math.floor((elapsed / 1000 / 60) % 60);
-    hours.value = Math.floor((elapsed / 1000 / 60 / 60) % 60);
+    seconds.value = converter.getSecsFromMs(elapsed);
+    minutes.value = converter.getMinsFromMs(elapsed);
+    hours.value = converter.getHrsFromMs(elapsed);
   };
 
   const handleReset = () => {
@@ -31,7 +31,7 @@ export function useStopwatch() {
 
   const handleToggleRunning = () => {
     if (!isRunning.value) {
-      isRunning.value = true; //is updating through value right??
+      isRunning.value = true;
       start = Date.now() - elapsed;
       intervalId = setInterval(updateTime, 75);
     } else {
