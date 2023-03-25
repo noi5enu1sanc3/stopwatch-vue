@@ -1,21 +1,18 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
 import StopWatch from './components/StopWatch.vue';
 import AddButton from './components/AddButton.vue';
 
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 const INITIAL_STOPWATCH_COUNT = 4;
-const INITIAL_STOPWATCH = {
-  isRunning: false,
-  isReset: true
-};
 
-const stopwatches = reactive([]);
+const stopwatches = ref([]);
 
 for (let i = 0; i < INITIAL_STOPWATCH_COUNT; i++) {
-  stopwatches.push(INITIAL_STOPWATCH);
+  stopwatches.value.push({});
 }
+
+const addStopwatch = () => stopwatches.value.push({});
 </script>
 
 <template>
@@ -24,7 +21,7 @@ for (let i = 0; i < INITIAL_STOPWATCH_COUNT; i++) {
       <li v-for="(stopwatch, index) in stopwatches" :key="`w_${index + 1}`">
         <StopWatch />
       </li>
-      <AddButton @click="stopwatches.push(INITIAL_STOPWATCH)" />
+      <AddButton @click="addStopwatch" />
     </ul>
   </main>
 </template>
