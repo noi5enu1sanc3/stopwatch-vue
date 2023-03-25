@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 
-import StopWatch from './components/StopWatch.vue';
-import AddButton from './components/ui/AddButton.vue';
+import { StopWatch } from './widgets/stopwatch';
+import AddButton from './shared/ui/AddButton.vue';
 
 const INITIAL_STOPWATCH_COUNT = 4;
 
