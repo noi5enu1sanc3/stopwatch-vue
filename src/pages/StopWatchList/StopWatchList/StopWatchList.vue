@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 
 import { StopWatch } from '../../../widgets/stopwatch';
-import AddButton from '../../../shared/ui/AddButton.vue';
+import { AddButton } from '../../../shared/ui';
 
 import * as idHelper from '../utils/getId';
 import * as constants from '../utils/constants';
@@ -27,8 +27,8 @@ const buttonId = idHelper.getId(constants.BUTTON_ID_PREFIX);
     <li v-for="id in stopwatches" :key="id">
       <StopWatch />
     </li>
-    <li>
-      <AddButton :key="buttonId" @click="addStopwatch" />
+    <li :key="buttonId">
+      <AddButton @click="addStopwatch" />
     </li>
   </TransitionGroup>
 </template>
