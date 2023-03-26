@@ -1,10 +1,17 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
+import { StopWatchList } from './pages/StopWatchList';
 </script>
 
 <template>
-  <div></div>
-  <HelloWorld msg="Vite + Vue" />
+  <main class="main">
+    <StopWatchList />
+  </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 70px 0 80px;
+}
+</style>
