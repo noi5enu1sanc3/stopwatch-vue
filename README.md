@@ -1,7 +1,55 @@
-# Vue 3 + Vite
+# stopwatch-vue
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Тестовое задание
 
-## Recommended IDE Setup
+Деплой: https://noi5enu1sanc3.github.io/stopwatch-vue
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Stack
+
+- Vue.js 3 (Composition API, SFC)
+- Scss
+- eslint
+
+## ТЗ
+
+Создать страницу с секундомерами.
+
+Каждый секундомер должен иметь 3 функции:
+
+    1. Запуск
+    2. Пауза
+    3. Сброс
+
+Кроме секундомеров на странице должна быть кнопка, которая добавляет новый секундомер в список.
+
+[Макет](https://www.figma.com/file/plPASXLUHB1SvIvz4oAvBu/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=0%3A1)
+
+## Запустить локально
+
+```bash
+  git clone git@github.com:noi5enu1sanc3/stopwatch-vue.git
+```
+
+```bash
+  cd stopwatch-vue
+```
+
+```bash
+  npm install
+```
+
+Запуск в production mode:
+
+```bash
+  npm run build
+```
+
+```bash
+  npm run preview
+```
+
+Запуск в dev mode:
+
+```bash
+  npm run dev
+```
