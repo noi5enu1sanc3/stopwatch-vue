@@ -27,7 +27,9 @@ const buttonId = idHelper.getId(constants.BUTTON_ID_PREFIX);
     <li v-for="id in stopwatches" :key="id">
       <StopWatch />
     </li>
-    <AddButton :key="buttonId" @click="addStopwatch" />
+    <li>
+      <AddButton :key="buttonId" @click="addStopwatch" />
+    </li>
   </TransitionGroup>
 </template>
 

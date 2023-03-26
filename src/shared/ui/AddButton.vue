@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-  <button class="add-button">
+  <button class="add-button" type="button" aria-label="Add new stopwatch">
     <div class="add-button__icon" />
   </button>
 </template>

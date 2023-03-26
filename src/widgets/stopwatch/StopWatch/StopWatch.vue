@@ -17,6 +17,7 @@ const { hours, minutes, seconds, isRunning, handleToggleRunning, handleReset } =
       <button
         class="stopwatch__button stopwatch__button_type_start"
         :class="{ stopwatch__button_type_pause: isRunning }"
+        :aria-label="isRunning ? 'Pause' : 'Start'"
         @click="handleToggleRunning"
       >
         <span
@@ -28,6 +29,7 @@ const { hours, minutes, seconds, isRunning, handleToggleRunning, handleReset } =
       </button>
       <button
         class="stopwatch__button stopwatch__button_type_stop"
+        aria-label="Stop"
         @click="handleReset"
       />
     </div>
