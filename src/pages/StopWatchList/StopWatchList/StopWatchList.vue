@@ -34,9 +34,6 @@ const buttonId = idHelper.getId(constants.BUTTON_ID_PREFIX);
 <style lang="scss">
 @import '../../../assets/styles/mixins';
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: grid;
   width: fit-content;
   column-gap: $gap-column;
@@ -53,7 +50,8 @@ ul {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.list-move, /* apply transition to moving elements */
+
+.list-move,
 .list-enter-active,
 .list-leave-active {
   transition: all 0.5s ease;
@@ -65,8 +63,6 @@ ul {
   transform: translateX(30px);
 }
 
-/* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
 .list-leave-active {
   position: absolute;
 }
