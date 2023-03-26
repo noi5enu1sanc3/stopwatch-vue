@@ -27,10 +27,11 @@ import { ADD_BUTTON_TEXT } from '../utils/constants';
     background-repeat: no-repeat;
     background-size: contain;
     background-color: $primary-dark;
-    transition: background-color 0.3s ease-in;
+    transition: background-color 0.3s ease-in, transform 0.3s ease-in;
   }
   &:hover &__icon {
     background-color: $primary;
+    transform: scale(1.1);
   }
 }
 </style>

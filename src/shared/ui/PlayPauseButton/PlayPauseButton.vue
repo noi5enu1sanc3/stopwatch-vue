@@ -33,6 +33,10 @@ const props = defineProps({
   border: none;
   outline: none;
   position: relative;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
   &__element {
     display: inline-block;
     width: 20px;

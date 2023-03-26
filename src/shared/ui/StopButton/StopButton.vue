@@ -25,9 +25,12 @@ const props = defineProps({
   border: none;
   outline: none;
   position: relative;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   &_running {
     background-color: $primary;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 </style>
