@@ -28,7 +28,7 @@ const buttonId = idHelper.getId(constants.BUTTON_ID_PREFIX);
       <StopWatch />
     </li>
     <li :key="buttonId">
-      <AddButton @click="addStopwatch" />
+      <AddButton :on-click="addStopwatch" />
     </li>
   </TransitionGroup>
 </template>

@@ -1,9 +1,21 @@
 <script setup>
 import { ADD_BUTTON_TEXT } from '../utils/constants';
+
+const props = defineProps({
+  onClick: {
+    type: Function,
+    default: () => undefined
+  }
+});
 </script>
 
 <template>
-  <button class="add-button" type="button" :aria-label="ADD_BUTTON_TEXT">
+  <button
+    class="add-button"
+    type="button"
+    :aria-label="ADD_BUTTON_TEXT"
+    @click="props.onClick"
+  >
     <div class="add-button__icon" />
   </button>
 </template>
@@ -21,9 +33,9 @@ import { ADD_BUTTON_TEXT } from '../utils/constants';
   align-items: center;
   &__icon {
     width: 20px;
+    height: 20px;
     -webkit-mask-image: url('../../../assets/icons/cross-icon.svg');
     mask-image: url('../../../assets/icons/cross-icon.svg');
-    height: 20px;
     background-repeat: no-repeat;
     background-size: contain;
     background-color: $primary-dark;

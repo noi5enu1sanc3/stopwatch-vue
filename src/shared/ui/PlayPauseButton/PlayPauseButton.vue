@@ -1,17 +1,24 @@
 <script setup>
 import { PLAY_BUTTON_TEXT, PAUSE_BUTTON_TEXT } from '../utils/constants';
+
 const props = defineProps({
   isRunning: {
     type: Boolean,
     default: false
+  },
+  onClick: {
+    type: Function,
+    default: () => undefined
   }
 });
 </script>
+
 <template>
   <button
     class="play-pause-button play-pause-button_type_start"
     :class="{ 'play-pause-button_type_pause': props.isRunning }"
     :aria-label="props.isRunning ? PAUSE_BUTTON_TEXT : PLAY_BUTTON_TEXT"
+    @click="props.onClick"
   >
     <span
       class="play-pause-button__element play-pause-button__element_type_before"

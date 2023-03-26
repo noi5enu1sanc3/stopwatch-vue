@@ -6,6 +6,7 @@ export function useStopwatch() {
   const minutes = ref(0);
   const seconds = ref(0);
   const isRunning = ref(false);
+  const isReset = ref(true);
 
   let start = 0;
   let elapsed = 0;
@@ -21,6 +22,7 @@ export function useStopwatch() {
 
   const handleReset = () => {
     isRunning.value = false;
+    isReset.value = true;
     clearInterval(intervalId);
     start = 0;
     elapsed = 0;
@@ -32,6 +34,7 @@ export function useStopwatch() {
   const handleToggleRunning = () => {
     if (!isRunning.value) {
       isRunning.value = true;
+      isReset.value = false;
       start = Date.now() - elapsed;
       intervalId = setInterval(updateTime, 75);
     } else {
@@ -46,6 +49,7 @@ export function useStopwatch() {
     minutes,
     seconds,
     isRunning,
+    isReset,
     handleToggleRunning,
     handleReset
   };

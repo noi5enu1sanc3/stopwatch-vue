@@ -3,8 +3,15 @@ import { useStopwatch } from '../composables/useStopwatch';
 import * as formatter from '../utils/formatTime';
 import { PlayPauseButton, StopButton } from '../../../shared/ui';
 
-const { hours, minutes, seconds, isRunning, handleToggleRunning, handleReset } =
-  useStopwatch();
+const {
+  hours,
+  minutes,
+  seconds,
+  isRunning,
+  isReset,
+  handleToggleRunning,
+  handleReset
+} = useStopwatch();
 </script>
 
 <template>
@@ -15,8 +22,15 @@ const { hours, minutes, seconds, isRunning, handleToggleRunning, handleReset } =
       }}</span>
     </div>
     <div class="stopwatch__controls">
-      <PlayPauseButton :is-running="isRunning" @click="handleToggleRunning" />
-      <StopButton :is-running="isRunning" @click="handleReset" />
+      <PlayPauseButton
+        :is-running="isRunning"
+        :on-click="handleToggleRunning"
+      />
+      <StopButton
+        :is-running="isRunning"
+        :is-reset="isReset"
+        :on-click="handleReset"
+      />
     </div>
   </div>
 </template>
