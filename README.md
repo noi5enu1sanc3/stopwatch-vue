@@ -1,7 +1,5 @@
 # stopwatch-vue
 
-Тестовое задание
-
 Деплой: https://noi5enu1sanc3.github.io/stopwatch-vue
 
 ## Stack
@@ -21,8 +19,6 @@
     3. Сброс
 
 Кроме секундомеров на странице должна быть кнопка, которая добавляет новый секундомер в список.
-
-[Макет](https://www.figma.com/file/plPASXLUHB1SvIvz4oAvBu/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=0%3A1)
 
 ## Запустить локально
 
