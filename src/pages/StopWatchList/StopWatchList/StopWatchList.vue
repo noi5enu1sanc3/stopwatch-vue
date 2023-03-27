@@ -7,12 +7,7 @@ import { AddButton } from '../../../shared/ui';
 import * as idHelper from '../utils/getId';
 import * as constants from '../utils/constants';
 
-const stopwatches = ref([]);
-
-for (let i = 0; i < constants.INITIAL_STOPWATCH_COUNT; i++) {
-  const stopwatchId = idHelper.getId(constants.STOPWATCH_ID_PREFIX);
-  stopwatches.value.push(stopwatchId);
-}
+const stopwatches = ref([idHelper.getId(constants.STOPWATCH_ID_PREFIX)]);
 
 const addStopwatch = () => {
   const stopwatchId = idHelper.getId(constants.STOPWATCH_ID_PREFIX);
