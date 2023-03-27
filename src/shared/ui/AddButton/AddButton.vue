@@ -25,6 +25,7 @@ const props = defineProps({
   width: 225px;
   height: 120px;
   color: $primary-dark;
+  background-color: transparent;
   border: none;
   box-shadow: 0 0 2px $primary-dark;
   outline: none;
