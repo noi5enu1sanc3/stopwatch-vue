@@ -9,7 +9,7 @@ export function useStopwatch() {
   const isReset = ref(true);
 
   let start = 0;
-  let elapsed = 3540000;
+  let elapsed = 0;
   let intervalId;
 
   const updateTime = () => {
