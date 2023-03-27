@@ -24,7 +24,6 @@ const props = defineProps({
 .add-button {
   width: 225px;
   height: 120px;
-  background-color: $bg-grey;
   color: $primary-dark;
   border: none;
   box-shadow: 0 0 2px $primary-dark;
