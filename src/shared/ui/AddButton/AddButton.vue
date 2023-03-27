@@ -27,10 +27,15 @@ const props = defineProps({
   background-color: $bg-grey;
   color: $primary-dark;
   border: none;
+  box-shadow: 0 0 2px $primary-dark;
   outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: box-shadow 0.3s ease-in;
+  &:hover {
+    box-shadow: 0 0 2px $primary;
+  }
   &__icon {
     width: 20px;
     height: 20px;

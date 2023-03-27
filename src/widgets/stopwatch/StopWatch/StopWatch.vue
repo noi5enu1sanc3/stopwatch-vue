@@ -39,7 +39,7 @@ const {
 .stopwatch {
   width: 225px;
   height: 120px;
-  background-color: $bg-grey;
+  border: 1px solid $primary-dark;
   &__display {
     display: flex;
     justify-content: center;
@@ -61,6 +61,10 @@ const {
     gap: $gap-column;
     justify-content: center;
     align-items: center;
+  }
+  &_running {
+    border: none;
+    box-shadow: 0px 0px 2px $primary;
   }
   &_running * {
     color: $primary;
